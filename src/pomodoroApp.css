@@ -3,3 +3,102 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+body{
+    background-color: rgb(44, 63, 26);
+    color: rgb(250, 241, 241);
+    word-spacing: 10px;
+    font-family: GenghisKhan;
+}
+
+#main{
+  position: fixed;
+  top: 10%;
+  left: 35%;
+  margin-top: -50px;
+  margin-left: -100px;
+  padding: 5%;
+}
+
+#main > h1 {
+    font-size: 3rem;
+    padding: 10px;
+}
+
+#timer{
+    display: flex;
+    justify-content: space-around;
+}
+
+h2{
+    font-size: 1.5rem;
+    padding: 5px;
+}
+
+.btns{
+    padding: 10px;
+    display: flex;
+}
+
+.btns p{
+    margin: 10px;
+    font-size: xx-large;
+    display: inline;
+
+}
+.icons{
+    font-size: 2rem;
+    margin: 5px;
+    border-radius: 20%;
+}
+
+button{
+    color: green;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+button:focus{
+    outline: none;
+}
+
+@font-face{
+    font-family: 'digital-7 mono';
+    src: local('digital-7'), url(./digital-7.ttf), format('truetype');
+}
+@font-face{
+    font-family: GenghisKhan;
+    src: local('GenghisKhan'), url(./GenghisKhan.otf);
+}
+
+.clock{
+    border: 10px solid white;
+    border-radius: 40px;
+    padding: 10px;
+    margin: 20px 15px;
+}
+
+.clock p {
+    font-size: 2.5rem;
+    text-align: center;
+    padding: 10px;
+}
+
+.counter{
+    font-size: 6rem;
+    text-align: center;
+    font-family: digital-7 mono;
+}
+
+.mainbtns{
+    text-align: center;
+}
+
+.mainbtns button{
+    margin: 0 10px;
+}
+
+.react-icons {
+    font-size: 10rem;
+}
