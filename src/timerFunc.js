@@ -20,7 +20,7 @@ const TimerFunction = (props) => {
               
              </span>  
 
-             <p>1</p>
+             <p>{props.timer}</p>
 
              <span>
                <IconContext.Provider value={{className: 'icons'}}>
