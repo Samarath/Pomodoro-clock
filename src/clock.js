@@ -33,6 +33,9 @@ const Clock = (props) => {
   case props.seconds === 0:  
     addZero = '00';
     break;
+  default:
+    return;
+
   }
 
   switch (props.time < 10) {
@@ -54,23 +57,26 @@ const Clock = (props) => {
    case props.time === 4:
     anotherOner = '04';
     break;   
-   case props.time === 3:
+    case props.time === 3:
      anotherOner = '03'
      break;
-  case props.time === 2:
+   case props.time === 2:
     anotherOner = '02';
     break;
-  case props.time === 1:
+   case props.time === 1:
     anotherOner = '01';
     break;
-  case props.time === 0:  
+   case props.time === 0:  
     anotherOner = '00';
     break;
+
+   default:
+    return;  
   }
 
     return (
         <div className='clock'>
-          <p>Session</p>
+          <p>{props.names}</p>
           <div className='counter'>
              <span>{props.time < 10? anotherOner : props.time}</span>:<span>{props.seconds < 10? addZero: props.seconds }</span> 
           </div>

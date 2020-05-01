@@ -3,7 +3,7 @@ import {FaArrowAltCircleUp, FaArrowAltCircleDown} from 'react-icons/fa';
 import { IconContext } from "react-icons";
 
 const TimerFunction = (props) => {
-
+    
     return (
         <>
          <div>
