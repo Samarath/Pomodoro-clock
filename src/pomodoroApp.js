@@ -14,12 +14,9 @@ const PomodoroClock = () => {
   const [pausePlay, setPausePlay] = useState(false); //for start or stop timer
   const [showTimer, setShowTimer] = useState(sessionTime); //for not changing the session timer with the timer
   const [showBreakTime, setShowBreakTime] = useState(breaktime); //for not changing the break timer with the timer
-  const [startStopBreakTime, setStartStopBreakTime] = useState(true);
-  const [timerName, setTimerName] = useState('Session');
-  const [controls, setControls] = useState(true);
-
-// ------------------------bugd fryail----------
-//when sessionTime get 0 and sesseionSessn second  is also zero then disable utton
+  const [startStopBreakTime, setStartStopBreakTime] = useState(true); //for swithing the time session to break
+  const [timerName, setTimerName] = useState('Session'); //for giving the name of clock session or break which is running at that time
+  const [controls, setControls] = useState(true);//for swithing names of session and break
 
     useInterval(() => {
 
@@ -27,10 +24,9 @@ const PomodoroClock = () => {
 
         setSessionSeconds(preSession => {
           if(preSession === 0){
-            // console.log(`session time is ${sessionTime}`)
+
             setSessionTime(preTime => preTime === 0? preTime: preTime - 1);
             setSessionSeconds(59); 
-            // console.log(`recheck session time ${sessionTime}`)
           }
   
           if(sessionTime <= 0 && sessionSeconds === 1){
@@ -39,9 +35,7 @@ const PomodoroClock = () => {
              setTimerName('Break');
              setBreakTime(showBreakTime);
 
-            //  console.log(`where time is gonno switch sessionTime is =${sessionTime}`);
           }
-          // console.log(`counting every seconds and session time is =${sessionTime}`);
           return preSession - 1;
         });
 
@@ -49,20 +43,18 @@ const PomodoroClock = () => {
         setSessionSeconds(preSession => {
 
           if(preSession === 0){
-            // console.log(`session time is ${sessionTime}`)
+
             setBreakTime(preTime => preTime === 0? preTime: preTime - 1);
             setSessionSeconds(59); 
-            // console.log(`recheck session time ${sessionTime}`)
           }
   
           if(breaktime <= 0 && sessionSeconds === 1){
+
              setStartStopBreakTime(true);
              setControls(true);
              setTimerName('Session');
-             setSessionTime(showTimer);
-            //  console.log(`where time is gonno switch sessionTime is =${sessionTime}`);
+             setSessionTime(showTimer); 
           }
-          // console.log(`counting every seconds and session time is =${sessionTime}`);
           return preSession - 1;
         });
       }
@@ -167,7 +159,7 @@ const PomodoroClock = () => {
     }
   }
 
-  const reset = () => {
+  const reset = () => { //for reset everything in clock and all the functions
     setShowBreakTime(5);
     setBreakTime(5);
     setSessionTime(25);
@@ -176,7 +168,7 @@ const PomodoroClock = () => {
     setStartStopBreakTime(true);
     setTimerName('Session');
     setShowTimer(25);
-    
+    setControls(true);
   }
 
     return (
