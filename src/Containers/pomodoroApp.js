@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
-import TimerFunction from './timerFunc'
-import Clock from './clock';
-import {useInterval} from './intervalFunc';
-import './pomodoroApp.css';
+import TimerFunction from '../Components/timerFunc'
+import Clock from '../Components/clock';
+import {useInterval} from '../Custom Hook/intervalFunc';
+import '../Styles/pomodoroApp.css';
 import { FaPlay, FaSyncAlt, FaGripLinesVertical } from 'react-icons/fa';
 import { IconContext } from "react-icons";
 
@@ -83,6 +83,7 @@ const PomodoroClock = () => {
       });
   }
 
+
   const decreaseTime = () => {
     setBreakTime((pretime) => {
       if(!pausePlay){
@@ -154,9 +155,6 @@ const PomodoroClock = () => {
 
   const playPauseTime = () => {
     setPausePlay( preState => !preState)
-    if(playPauseTime){
-      
-    }
   }
 
   const reset = () => { //for reset everything in clock and all the functions

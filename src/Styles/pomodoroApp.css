@@ -65,11 +65,11 @@ button:focus{
 
 @font-face{
     font-family: 'digital-7 mono';
-    src: local('digital-7'), url(./digital-7.ttf), format('truetype');
+    src: local('digital-7'), url(../fonts/digital-7.ttf), format('truetype');
 }
 @font-face{
     font-family: GenghisKhan;
-    src: local('GenghisKhan'), url(./GenghisKhan.otf);
+    src: local('GenghisKhan'), url(../fonts/GenghisKhan.otf);
 }
 
 .clock{

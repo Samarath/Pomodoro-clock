@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PomodoroClock from './pomodoroApp';
+import PomodoroClock from './Containers/pomodoroApp';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
